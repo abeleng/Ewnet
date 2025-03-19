@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-dark text-gray-100;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-white text-dark rounded-none hover:bg-gray-200 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 border border-white text-white rounded-none hover:bg-white hover:text-dark transition-all duration-300;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-dark-100 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-white transition-all duration-300 rounded-none;
+  }
+
+  .card {
+    @apply bg-dark-100 p-6 rounded-none border border-gray-800;
+  }
+
+  .nav-link {
+    @apply text-gray-400 hover:text-white transition-all duration-300;
+  }
+
+  .image-hover {
+    @apply relative overflow-hidden;
+  }
+
+  .image-hover img {
+    @apply transition-transform duration-700 ease-in-out;
+  }
+
+  .image-hover:hover img {
+    @apply transform scale-110;
+  }
+
+  .overlay-gradient {
+    @apply absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-70;
+  }
+
+  .grid-gallery {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0;
+  }
+
+  .gallery-item {
+    @apply relative h-64 md:h-96 overflow-hidden;
+  }
+}
